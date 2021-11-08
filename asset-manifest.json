@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Portfoilo/static/css/main.21fcbe61.chunk.css",
+    "main.js": "/Portfoilo/static/js/main.135fdc7b.chunk.js",
+    "main.js.map": "/Portfoilo/static/js/main.135fdc7b.chunk.js.map",
+    "runtime-main.js": "/Portfoilo/static/js/runtime-main.1bc7d6ba.js",
+    "runtime-main.js.map": "/Portfoilo/static/js/runtime-main.1bc7d6ba.js.map",
+    "static/js/2.d33de6af.chunk.js": "/Portfoilo/static/js/2.d33de6af.chunk.js",
+    "static/js/2.d33de6af.chunk.js.map": "/Portfoilo/static/js/2.d33de6af.chunk.js.map",
+    "static/js/3.a58f5969.chunk.js": "/Portfoilo/static/js/3.a58f5969.chunk.js",
+    "static/js/3.a58f5969.chunk.js.map": "/Portfoilo/static/js/3.a58f5969.chunk.js.map",
+    "index.html": "/Portfoilo/index.html",
+    "static/css/main.21fcbe61.chunk.css.map": "/Portfoilo/static/css/main.21fcbe61.chunk.css.map",
+    "static/js/2.d33de6af.chunk.js.LICENSE.txt": "/Portfoilo/static/js/2.d33de6af.chunk.js.LICENSE.txt",
+    "static/media/githubDarkMode.05f6c17b.png": "/Portfoilo/static/media/githubDarkMode.05f6c17b.png",
+    "static/media/gmail.a2f2146f.png": "/Portfoilo/static/media/gmail.a2f2146f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1bc7d6ba.js",
+    "static/js/2.d33de6af.chunk.js",
+    "static/css/main.21fcbe61.chunk.css",
+    "static/js/main.135fdc7b.chunk.js"
+  ]
+}
