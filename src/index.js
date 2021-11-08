@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { NavBar, Title, BackgroundDesc, Projects, FooterFunc, LineBreak, ColorMode, changeColor } from './App';
 import reportWebVitals from './reportWebVitals';
+
+class Main extends React.Component {
+  render() {
+    return (
+      <body onLoad={changeColor}>
+        <div>
+          <NavBar />
+          <ColorMode />
+          <LineBreak />
+          <Title />
+          <BackgroundDesc />
+          <Projects />
+          <LineBreak />
+          <FooterFunc />
+        </div>
+      </body>
+    );
+  }
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );
