@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { NavBar, Title, BackgroundDesc, Projects, FooterFunc, LineBreak, ColorMode, changeColor } from './App';
+import { NavBar, Title, BackgroundDesc, Projects, FooterFunc, LineBreak, modeFunc, getCurrentMode } from './App';
 import reportWebVitals from './reportWebVitals';
 
 class Main extends React.Component {
   render() {
     return (
-      <body onLoad={changeColor}>
-        <div>
+      <body >
+        <div onLoad={modeFunc}>
           <NavBar />
-          <ColorMode />
           <LineBreak />
           <Title />
           <BackgroundDesc />

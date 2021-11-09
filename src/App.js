@@ -1,12 +1,20 @@
 import './App.css';
 import gmail from './visuals/gmail.png'
 import github from './visuals/githubDarkMode.png'
+import linkedin from './visuals/linkedin.png'
 import React from 'react';
 
 
+// Set mode to start
 let mode = "dark";
-mode = localStorage.setItem('mode', mode);
-let projectOutline = document.getElementById("projectTemplate");
+localStorage.setItem("mode", mode);
+export let getCurrentMode = () => {
+  let getMode = localStorage.getItem("mode");
+  return getMode;
+}
+
+let modeV = getCurrentMode();
+console.log(modeV);
 
 const colors = {
   lightBackground: "rgb(226, 218, 218)",
@@ -18,34 +26,23 @@ const colors = {
 }
 
 
-export function changeColor() {
-  let modeV = localStorage.getItem("mode")
-  console.log(modeV)
-  if (modeV === "light") {
-    document.body.style.backgroundColor = colors.lightBackground;
-    document.body.style.color = colors.lightText;
-    //document.body.projectTemplate.outline = colors.outlineLight;
-  } else if (modeV === "dark") {
-    document.body.style.backgroundColor = colors.darkBackground;
-    document.body.style.color = colors.darkText;
-    //document.body.projectTemplate.style = "outline: 1px solid rgb(226, 218, 218)";
-  }
-  console.log(`colors changed to ${modeV}`)
-}
-
-
-function modeFunc() {
-  let modeV = localStorage.getItem("mode")
-    if (modeV === "light") {
-      modeV = "dark";
-      localStorage.setItem("mode", modeV);
-    } else {
+export function modeFunc() {
+    if (modeV === "dark") {
+      document.body.style.backgroundColor = colors.lightBackground;
+      document.body.style.color = colors.lightText;
       modeV = "light";
       localStorage.setItem("mode", modeV);
+      return modeV;
+    } 
+    else {
+      document.body.style.backgroundColor = colors.darkBackground;
+      document.body.style.color = colors.darkText;
+      modeV = "dark";
+      localStorage.setItem("mode", modeV);
+      return modeV;
     }
-    changeColor();
 }
-
+modeV = modeFunc();
 
 
 export class NavBar extends React.Component {
@@ -56,22 +53,39 @@ export class NavBar extends React.Component {
         link: '#top'
       },
       {
-        name: 'Projects',
-        link: '#projects'
-      },
-      {
         name: 'Background',
         link: '#backgroundDesc'
       },
       {
+        name: 'Projects',
+        link: '#projects'
+      },
+      {
         name: 'Contact',
         link: '#contact'
+      },
+      {
+        name: 'Github',
+        link: 'https://github.com/bracesproul',
+        target: "_blank",
+        rel: "noreferrer"
+      },
+      {
+        name: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/brace-sproul-16a185195/',
+        target: "_blank",
+        rel: "noreferrer"
+      },
+      {
+        name: 'Login',
+        link: '#',
       }
     ]
-
+    let navBarCount = 0;
     const pageLinks = pages.map(page => {
+      navBarCount++;
       return (
-        <a className="navBarButton" href={page.link}>
+        <a className="navBarButton" href={page.link} key={navBarCount} target={page.target} rel={page.rel}>
           <p className="navBarText">
           {page.name}
           </p>
@@ -82,6 +96,7 @@ export class NavBar extends React.Component {
     return (
       <div className="navBar">
           {pageLinks}
+          <ColorButton />
       </div>
     );
   }
@@ -134,10 +149,11 @@ export class Projects extends React.Component {
         link: 'https://www.google.com'
       },
     ]
-
+    let projectCount = 0;
     const projectTemplate = projectList.map(project => {
+      projectCount++;
       return (
-          <div id="projectTemplate" className="projectTemplate">
+          <div id="projectTemplate" className="projectTemplate" key={projectCount}>
             <h3>{project.name}</h3>
             <p>{project.description}</p>
             <a className="projectLink" href={project.link}>
@@ -164,8 +180,9 @@ export class FooterFunc extends React.Component {
   render() {
     return (
       <div className="footer">
-        <a id="githubImgA" href="https://github.com/bracesproul" target="_blank"><img className="githubImg" id="githubImgImg" src={github} /></a>
-        <a id="gmailImgA" href="mailto:braceasproul@gmail.com" target="_blank"><img className="githubImg" id="gmailImgImg" src={gmail} /></a>
+        <a id="githubImgA" href="https://github.com/bracesproul" target="_blank" rel="noreferrer"><img alt="Github Icon" className="githubImg" id="githubImgImg" src={github} /></a>
+        <a id="gmailImgA" href="mailto:braceasproul@gmail.com" target="_blank" rel="noreferrer"><img alt="Gmail Icon" className="githubImg" id="gmailImgImg" src={gmail} /></a>
+        <a id="linkedinImgA" href="https://www.linkedin.com/in/brace-sproul-16a185195/" target="_blank" rel="noreferrer"><img alt="Linkedin Icon" className="linkedinImg" id="linkedinImgImg" src={linkedin} /></a>
       </div>
     )
   }
@@ -176,26 +193,11 @@ export function LineBreak() {
     <hr></hr>
   )
 }
-// NOT FULLY FUNCTIONAL
-export class ColorMode extends React.Component {
+
+class ColorButton extends React.Component {
   render() {
     return (
-      <div className="colorMode">
-        <button onClick={modeFunc} id="colorModeBtnId" className="colorModeBtn">{localStorage.getItem('mode') === "light" ? "Change to Dark Mode" : "Change to Light Mode"}</button>
-      </div>
+      <a onClick={modeFunc} id="colorModeBtnId" className="navBarButton"><p>Light/Dark</p></a>
     )
   }
 }
-
-
-
-//export default { App, NavBar };
-/*
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: white;
-  height: 3%;
-  width: 100%;
-*/
