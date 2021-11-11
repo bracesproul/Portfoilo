@@ -1,69 +1,220 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import React from "react"
+
+let mode = "dark";
+
+const colors = {
+  lightBackground: "rgb(226, 218, 218)",
+  lightText: "rgb(22, 22, 22)",
+  darkBackground: "rgb(22, 22, 22)",
+  darkText: "rgb(226, 218, 218)",
+  outlineLight: "rgb(226, 218, 218)",
+  outlineDark: "rgb(22, 22, 22)",
+}
+
+
+export function modeFunc() {
+    if (mode === "dark") {
+      //document.body.style.backgroundColor = colors.lightBackground;
+      //document.body.style.color = colors.lightText;
+      mode = "light";
+      return mode;
+    } 
+    else {
+      //document.body.style.backgroundColor = colors.darkBackground;
+      //document.body.style.color = colors.darkText;
+      mode = "dark";
+      return mode;
+    }
+}
+mode = modeFunc();
+
+
+export class NavBar extends React.Component {
+  render() {
+    const pages = [
+      {
+        name: 'Home',
+        link: '/'
+      },
+      {
+        name: 'Background',
+        link: '/#backgroundDesc'
+      },
+      {
+        name: 'Projects',
+        link: '/#projects'
+      },
+      {
+        name: 'Contact',
+        link: '/contact'
+      },
+      {
+        name: 'Github',
+        link: 'https://github.com/bracesproul',
+        target: "_blank",
+        rel: "noreferrer"
+      },
+      {
+        name: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/brace-sproul-16a185195/',
+        target: "_blank",
+        rel: "noreferrer"
+      },
+      {
+        name: 'Login',
+        link: '#',
+      }
+    ]
+    let navBarCount = 0;
+    const pageLinks = pages.map(page => {
+      navBarCount++;
+      return (
+        <a className="navBarButton" href={page.link} key={navBarCount} target={page.target} rel={page.rel}>
+          <p className="navBarText">
+          {page.name}
+          </p>
+        </a>
+      )
+    })
+    
+    return (
+      <div className="navBar">
+          {pageLinks}
+      </div>
+    );
+  }
+}
+
+export class Title extends React.Component {
+  render() {
+    return (
+      <div className="title">
+        <h1>Welcome to my Portfolio Website</h1>
+        <hr></hr>
+      </div>
+    )
+  }
+}
+
+export class BackgroundDesc extends React.Component {
+  render() {
+    return (
+      <div className="backgroundDesc" id="backgroundDesc">
+        <h3>My Background</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <hr></hr>
+      </div>
+    )
+  }
+}
+
+export class Projects extends React.Component {
+  render() {
+    const projectList = [
+      {
+        name: 'Project 1',
+        description: 'This is a project',
+        link: 'https://www.google.com'
+      },
+      {
+        name: 'Project 2',
+        description: 'This is another project',
+        link: 'https://www.google.com'
+      },
+      {
+        name: 'Project 3',
+        description: 'This is my fav project',
+        link: 'https://www.google.com'
+      },
+      {
+        name: 'Project 4',
+        description: 'This is my most complex project',
+        link: 'https://www.google.com'
+      },
+    ]
+    let projectCount = 0;
+    const projectTemplate = projectList.map(project => {
+      projectCount++;
+      return (
+          <div id="projectTemplate" className="projectTemplate" key={projectCount}>
+            <h3>{project.name}</h3>
+            <p>{project.description}</p>
+            <a className="projectLink" href={project.link}>
+              {project.name}
+            </a>
+          </div>
+      )
+    })
+
+    return (
+      <div id="projects" className="projects">
+        <h2>Projects</h2>
+        <div className="flex-container">
+          {projectTemplate}
+        </div>
+      </div>
+    )
+  }
+}
+
+
+// BROKEN
+/*
+export class FooterFunc extends React.Component {
+  render() {
+      const images = [
+          {
+            name: 'Gmail',
+            imgSrc: "/images/gmail.png",
+            link: "mailto:braceasproul@gmail.com",
+            alt: "Gmail icon and redirect link to send me an email"
+          },
+          {
+            name: 'Github',
+            imgSrc: "/images/github.png",
+            link: "https://github.com/bracesproul",
+            alt: "Github icon and redirect link to my Github page"
+        },
+        {
+            name: 'LinkedIn',
+            imgSrc: "/images/linkedin.png",
+            link: "https://www.linkedin.com/in/brace-sproul-16a185195/",
+            alt: "LinkedIn icon and redirect link to my LinkedIn page"
+        }
+      ]
+        let imageCount = 0;
+        const imageFooter = images.map(image => {
+            imageCount++;
+            return (
+                <a key={imageCount} id="footerIcon" href={image.link} target="_blank" rel="noreferrer"> <p id="footer">{image.name}</p> </a>
+            )
+        })
+
+    return (
+      <div className="footer">
+          {imageFooter}
+      </div>
+    )
+  }
+}
+*/
+export function LineBreak() {
+  return (
+    <hr></hr>
+  )
+}
+
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    return (
+        <div>
+          <NavBar />
+          <LineBreak />
+          <Title />
+          <BackgroundDesc />
+          <Projects />
+          <LineBreak />
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
+    )
 }
