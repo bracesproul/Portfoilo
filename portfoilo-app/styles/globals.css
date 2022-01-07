@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
+.a {
+  text-decoration: underline;
+  color: blue;
+  font-weight: bold;
+}
+
+.h {
+  font-family: 'Inter', sans-serif;
+  font-weight: 'extra-bold 800';
+}
+
+.p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 'extra-light 200';
+}

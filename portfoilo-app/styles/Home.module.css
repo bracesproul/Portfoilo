@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
+
+.header {
+  font-family: 'Inter', sans-serif;
+  font-weight: normal;
+}
+
+.p {
+  font-family: 'Inter', sans-serif;
+  font-weight: extra-light 200;
+}
+
+.link {
+  font-family: 'Inter', sans-serif;
+  font-weight: bolder;
+  text-decoration: underline;
+  color: blue;
+  font-weight: bold;
+}
+
+.content {
+  max-width: "960px";
+  margin: "0 auto";
+  margin-left: 20%;
+  margin-right: 20%;
+}
