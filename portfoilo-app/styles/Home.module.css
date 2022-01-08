@@ -2,26 +2,84 @@
 
 
 .header {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: normal;
+  text-align: center;
 }
 
 .p {
-  font-family: 'Inter', sans-serif;
-  font-weight: extra-light 200;
+  font-family: "Inter", sans-serif;
+  font-weight: "extra-light 200";
 }
 
-.link {
-  font-family: 'Inter', sans-serif;
+.linkV {
+  font-family: "Inter", sans-serif;
   font-weight: bolder;
   text-decoration: underline;
   color: blue;
-  font-weight: bold;
+  text-align: center;
 }
 
 .content {
-  max-width: "960px";
-  margin: "0 auto";
+  max-width: 960px;
+  margin: 0 auto;
   margin-left: 20%;
   margin-right: 20%;
+}
+
+.textBody {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.contentTitle {
+  font-family: "Inter", sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.projectBox {
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.individualProject {
+  border: 1px solid black;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.technologiesBox {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.individualTechs {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.85em;
+}
+
+.flexContainer {
+  border: 1px solid black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.flexContainer > div {
+  margin: 10px;
+  padding: 20px;
+}
+
+.recourcesContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.recourcesContainer > a {
+  margin: 10px;
 }
