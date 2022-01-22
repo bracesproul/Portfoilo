@@ -24,29 +24,19 @@ const Projects = () => {
       <div className={styles.individualProject}>
         <h4 className={styles.contentTitle}>Survey Site</h4>
         <p className={styles.textBody}>This web application is similar to Google Forms with the ability to create fully dynamic forms and accept responses.
-          The application is built with React.JS and Next.JS.
-          The database used is Firebase Firestore
-          Authentication is handled by Firebase Auth.
         </p>
-        <span className={styles.linkV}>
-        <a href="https://survey-site-iota.vercel.app/" target="_blank"><p>Click here to view the app</p></a> 
-        <a href="https://github.com/bracesproul/Survey-Site/tree/main/react-learning/survey-site" target="_blank"><p>Click here to view the source code on GitHub</p></a>
+        <span>
+        <p>Click <a className={styles.linkV} href="https://survey-site.vercel.app/" target="_blank">here</a> to view the app</p>
+        <p>Click <a className={styles.linkV} href="https://github.com/bracesproul/Survey-Site/tree/main/react-learning/survey-site" target="_blank">here</a> to view the source code on GitHub</p>
         </span>
       </div>
       <br />
       <div className={styles.individualProject}>
         <h4 className={styles.contentTitle}>COVID-19 Data</h4>
-        <p className={styles.textBody}>This web app displays data on COVID-19 infections, deaths and more from 40+ country's around the world. 
-          Infections and deaths are updated hourly and more indepth statistics updated daily.
-          The data is pulled from an API provided from <a href="https://apify.com" target="_blank">Apify</a>.
-          The app is built with React.JS and Next.JS.
-          The databse used is MongoDB
-          Serverside reads and writes to the database is handled by an Express.JS server and Node.JS.
-          Anylytics is handled by Google Analytics.
-        </p>
-        <span className={styles.linkV}>
-        <a><p>Website not yet active</p></a>
-        <a href="https://github.com/bracesproul/covid-19-data" target="_blank"><p>Click here to view the source code on GitHub</p></a>
+        <p className={styles.textBody}>This web app displays data on COVID-19 from over 200 countries worldwide.</p>
+        <span>
+        <p>Click <a className={styles.linkV} href="https://covid-statistics-fawn.vercel.app/" target="_blank">here</a> to access the site</p>
+        <p>Click <a className={styles.linkV} href="https://github.com/bracesproul/Covid-Statistics/" target="_blank">here</a> to view the source code on GitHub</p>
         </span>
       </div>
     </div>
@@ -64,11 +54,13 @@ const Technologies = () => {
           <label for="proficent"><h3 className={styles.contentTitle}>Proficient</h3></label>
           <span name="proficent" className={styles.individualTechs}>
           <p>JavaScript</p>
-          <p>React.JS (Hooks)</p>
-          <p>Next.JS</p>
-          <p>Node.JS</p>
+          <p>React.js</p>
+          <p>Next.js</p>
+          <p>Node.js</p>
           <p>Firebase</p>
+          <p>REST APIs</p>
           <p>Command Line</p>
+          <p>Git</p>
           <p>VSCode</p>
           </span>
           <br />
@@ -79,10 +71,9 @@ const Technologies = () => {
           <span name="haveExperience" className={styles.individualTechs}>
             <p>HTML</p>
             <p>CSS</p>
-            <p>REST APIs</p>
             <p>MongoDB</p>
-            <p>Express.JS</p>
-            <p>React.JS (Classes)</p>
+            <p>Express.js</p>
+            <a>Axios</a>
           </span>
           <br />
         </div>
@@ -92,7 +83,6 @@ const Technologies = () => {
           <span name="interested" className={styles.individualTechs}>
             <p>Go</p>
             <p>Rust</p>
-            <p>C</p>
             <p>C++</p>
             <p>SQL</p>
           </span>
@@ -122,13 +112,11 @@ const Recources = () => {
   return (
     <div>
       <h3 className={styles.contentTitle}>Recources</h3>
-      <span className={styles.linkV}>
       <div className={styles.recourcesContainer}>
-      <a href="https://github.com/bracesproul" target="_blank"><h5 style={{ textAlign: "center"}}>My GitHub</h5></a>
-      <a href="https://twitter.com/bracesproul" target="_blank"><h5 style={{ textAlign: "center"}}>My Twitter</h5></a>
-      <a href="https://www.linkedin.com/in/brace-sproul-16a185195/" target="_blank"><h5 style={{ textAlign: "center"}}>My LinkedIn</h5></a>
+      <a className={styles.linkV} href="https://github.com/bracesproul" target="_blank"><h5 style={{ textAlign: "center"}}>My GitHub</h5></a>
+      <a className={styles.linkV} href="https://twitter.com/bracesproul" target="_blank"><h5 style={{ textAlign: "center"}}>My Twitter</h5></a>
+      <a className={styles.linkV} href="https://linkedin.com/in/brace-sproul-16a185195/" target="_blank"><h5 style={{ textAlign: "center"}}>My LinkedIn</h5></a>
       </div>
-      </span>
     </div>
   )
 }

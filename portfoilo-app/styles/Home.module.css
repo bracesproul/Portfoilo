@@ -5,6 +5,8 @@
   font-family: "Inter", sans-serif;
   font-weight: normal;
   text-align: center;
+  font-weight: bolder;
+  font-size: 2.5em;
 }
 
 .p {
@@ -13,9 +15,8 @@
 }
 
 .linkV {
-  font-family: "Inter", sans-serif;
-  font-weight: bolder;
   text-decoration: underline;
+  font-weight: bolder;
   color: blue;
   text-align: center;
 }
@@ -31,11 +32,12 @@
   font-family: "Inter", sans-serif;
   font-weight: 400;
   text-align: center;
+  padding: 10px;
 }
 
 .contentTitle {
   font-family: "Inter", sans-serif;
-  font-weight: bolder;
+  font-weight: 600;
   text-align: center;
 }
 
