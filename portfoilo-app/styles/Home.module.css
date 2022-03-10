@@ -14,6 +14,11 @@
   font-weight: "extra-light 200";
 }
 
+.techList {
+  font-weight: 700;
+  display: inline;
+}
+
 .linkV {
   text-decoration: underline;
   font-weight: bolder;
@@ -30,14 +35,14 @@
 
 .textBody {
   font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   padding: 10px;
 }
 
 .contentTitle {
   font-family: "Inter", sans-serif;
-  font-weight: 600;
+  font-weight: 900;
   text-align: center;
 }
 
@@ -49,6 +54,7 @@
 
 .individualProject {
   border: 1px solid black;
+  border-radius: 20px;
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
@@ -67,6 +73,7 @@
 
 .flexContainer {
   border: 1px solid black;
+  border-radius: 20px;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -84,4 +91,19 @@
 
 .recourcesContainer > a {
   margin: 10px;
+}
+
+.aboutText {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  padding: 3px;
+}
+
+.aboutContainer {
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 2rem;
 }
