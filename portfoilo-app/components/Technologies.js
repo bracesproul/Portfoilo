@@ -9,7 +9,7 @@ export const Technologies = () => {
         <div className={styles.flexContainer}>
   
           <div>
-            <label for="proficent"><h3 className={styles.contentTitle}>Proficient</h3></label>
+            <label htmlFor="proficent"><h3 className={styles.contentTitle}>Proficient</h3></label>
             <span name="proficent" className={styles.individualTechs}>
                 <p className={styles.techList}>JavaScript </p>
                 <Icon icon="akar-icons:javascript-fill" inline={true} />
@@ -50,7 +50,7 @@ export const Technologies = () => {
           </div>
   
           <div>
-            <label for="haveExperience"><h3 className={styles.contentTitle}>Have Experience in</h3></label>
+            <label htmlFor="haveExperience"><h3 className={styles.contentTitle}>Have Experience in</h3></label>
             <span name="haveExperience" className={styles.individualTechs}>
                 <p className={styles.techList}>HTML</p>
                 <Icon icon="akar-icons:html-fill" inline={true} />
@@ -71,7 +71,7 @@ export const Technologies = () => {
           </div>
   
           <div>
-            <label for="interested"><h3 className={styles.contentTitle}>Interested in</h3></label>
+            <label htmlFor="interested"><h3 className={styles.contentTitle}>Interested in</h3></label>
             <span name="interested" className={styles.individualTechs}>
               <p className={styles.techList}>Go </p>
               <Icon icon="fa6-brands:golang" inline={true} />
