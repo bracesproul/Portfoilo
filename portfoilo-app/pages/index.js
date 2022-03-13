@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import { Projects } from '../components/Projects';
@@ -33,17 +33,6 @@ const RecentWork = () => {
         <p>What I learned</p>
         <a><p>Link to work/company website</p></a>
       </span>
-    </div>
-  )
-}
-
-
-
-
-const Testing = () => {
-  return (
-    <div>
-
     </div>
   )
 }
